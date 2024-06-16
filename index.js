@@ -50,22 +50,6 @@ const getLink = async (pageLink) => {
 for (const pageLink of RECIPE_LINKS) {
   await getLink(pageLink);
 }
-console.log(originalRecipeLinks);
-// Locate the full title
-
-// // Locate the ingredients
-// await page.waitForSelector('::-p-text("Ingredients")~div a');
-// const ingredients = await page.$$eval(
-//   '::-p-text("Ingredients")~div a',
-//   (elements) => elements.map((e) => e.textContent),
-// );
-
-// Print
-// console.log('The title of this recipe is "%s".', fullTitle);
-// console.log("The ingredients are:");
-// ingredients.forEach((ingredient) => {
-//   console.log(ingredient);
-// });
 
 await browser.close();
 
