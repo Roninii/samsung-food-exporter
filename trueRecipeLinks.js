@@ -15,9 +15,9 @@ for (const link of recipeLinks) {
 
   // We have to try a couple of different checks here, as samsung doesn't always load the full original recipe page
   // If the data was loaded in Samsung's container, grab the url from the data attr
-  const dataFrame = await page.waitForSelector(".s39241").catch(); // Don't really need to do anything with this if it fails
+  const dataFrame = await page.waitForSelector(".s39241").catch(() => {}); // Don't really need to do anything with this if it fails
   if (dataFrame) {
-    const dataUrl = await dataFrame.evaluate(".s39241", (e) => e.data);
+    const dataUrl = await dataFrame.evaluate((e) => e.data);
     console.log(`Adding link, ${dataUrl} to list via data attribute`);
     trueURL.push(dataUrl);
   }
